@@ -7,9 +7,15 @@ A simple and interactive To-Do List application built with HTML, CSS, and JavaSc
 - **Mark as Complete**: Mark tasks as completed to keep track of progress.
 - **Delete Tasks**: Remove tasks once they are no longer needed.
 
+## Screenshot
+
+![To-Do List Screenshot](assets/screenshot.png "Screenshot of To-Do List App")
+
 ## Directory Structure
 
 to-do-list/ 
+├── assets/
+│   └── screenshot.png
 ├── index.html # Main HTML file 
 ├── styles.css # Styling for the to-do list 
 ├── script.js # JavaScript for functionality 
