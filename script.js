@@ -1,36 +1,57 @@
-function addTask() {
+document.addEventListener("DOMContentLoaded", () => {
     const taskInput = document.getElementById("taskInput");
+    const prioritySelector = document.getElementById("prioritySelector");
+    const addTaskButton = document.getElementById("addTaskButton");
     const taskList = document.getElementById("taskList");
 
-    const taskText = taskInput.value.trim();
-    if (taskText === "") return;
+    let tasks = [];
 
-    // Create new list item
-    const li = document.createElement("li");
+    const renderTasks = (filter = "all") => {
+        taskList.innerHTML = "";
+        const filteredTasks = tasks.filter((task) => {
+            if (filter === "completed") return task.completed;
+            if (filter === "pending") return !task.completed;
+            return true;
+        });
 
-    // Task text
-    li.textContent = taskText;
+        filteredTasks.forEach((task, index) => {
+            const li = document.createElement("li");
+            li.className = `task-item ${task.completed ? "completed" : ""}`;
+            li.innerHTML = `
+                <span>${task.text} (${task.priority})</span>
+                <div>
+                    <button onclick="toggleTask(${index})">Toggle</button>
+                    <button onclick="deleteTask(${index})">Delete</button>
+                </div>
+            `;
+            taskList.appendChild(li);
+        });
+    };
 
-    // Action buttons
-    const actions = document.createElement("div");
-    actions.className = "task-actions";
+    const addTask = () => {
+        const text = taskInput.value.trim();
+        const priority = prioritySelector.value;
+        if (text) {
+            tasks.push({ text, priority, completed: false });
+            taskInput.value = "";
+            renderTasks();
+        }
+    };
 
-    // Complete button
-    const completeBtn = document.createElement("button");
-    completeBtn.textContent = "Complete";
-    completeBtn.className = "complete-btn";
-    completeBtn.onclick = () => li.classList.toggle("completed");
+    window.toggleTask = (index) => {
+        tasks[index].completed = !tasks[index].completed;
+        renderTasks();
+    };
 
-    // Delete button
-    const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "Delete";
-    deleteBtn.className = "delete-btn";
-    deleteBtn.onclick = () => li.remove();
+    window.deleteTask = (index) => {
+        tasks.splice(index, 1);
+        renderTasks();
+    };
 
-    actions.appendChild(completeBtn);
-    actions.appendChild(deleteBtn);
-    li.appendChild(actions);
+    addTaskButton.addEventListener("click", addTask);
+    document.getElementById("filterAll").addEventListener("click", () => renderTasks("all"));
+    document.getElementById("filterCompleted").addEventListener("click", () => renderTasks("completed"));
+    document.getElementById("filterPending").addEventListener("click", () => renderTasks("pending"));
 
-    taskList.appendChild(li);
-    taskInput.value = "";
-}
+    renderTasks();
+});
