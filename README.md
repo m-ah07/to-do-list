@@ -12,15 +12,15 @@ A simple and interactive To-Do List application built with HTML, CSS, and JavaSc
 ![To-Do List Screenshot](assets/screenshot.png "Screenshot of To-Do List App")
 
 ## Directory Structure
-
-to-do-list/                                                                                                 
-├── assets/                                                                                            
-│   └── screenshot.png                                                                                                            
-├── index.html                                # Main HTML file                                                                                 
-├── styles.css                                # Styling for the to-do list                                                                         
-├── script.js                                 # JavaScript for functionality                                                                             
-└── README.md                                 # Documentation                                                                
-
+```plaintext
+to-do-list/
+├── assets/
+│   └── screenshot.png
+├── index.html                                # Main HTML file
+├── styles.css                                # Styling for the to-do list
+├── script.js                                 # JavaScript for functionality
+└── README.md                                 # Documentation
+```
 
 ## Usage
 1. Clone the repository:
