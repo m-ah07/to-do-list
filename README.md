@@ -16,10 +16,10 @@ A simple and interactive To-Do List application built with HTML, CSS, and JavaSc
 to-do-list/
 ├── assets/
 │   └── screenshot.png
-├── index.html                                # Main HTML file
-├── styles.css                                # Styling for the to-do list
-├── script.js                                 # JavaScript for functionality
-└── README.md                                 # Documentation
+├── index.html
+├── styles.css
+├── script.js
+└── README.md
 ```
 
 ## 📖 Usage
