@@ -19,6 +19,7 @@ to-do-list/
 ├── index.html
 ├── styles.css
 ├── script.js
+├── LICENSE
 └── README.md
 ```
 
@@ -31,3 +32,6 @@ to-do-list/
 
 ## 🤝 Contributing
 Contributions are welcome! Fork the repository and submit a pull request for any enhancements or bug fixes.
+
+## 🌟 Stay Connected
+Feel free to star ⭐ this repository if you find it helpful!
