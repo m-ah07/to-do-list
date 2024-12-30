@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced To-Do List App</title>
+    <title>To-Do List App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="app-container">
+    <div class="container">
         <h1>To-Do List App</h1>
-        <div class="task-input">
-            <input type="text" id="taskInput" placeholder="Add a new task..." />
-            <select id="prioritySelector">
-                <option value="low">Low Priority</option>
-                <option value="medium">Medium Priority</option>
-                <option value="high">High Priority</option>
+        <!-- Form to add tasks -->
+        <form id="taskForm">
+            <input type="text" id="taskInput" placeholder="Add your task" required />
+            <select id="taskCategory">
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Custom">Custom (add below)</option>
             </select>
-            <button id="addTaskButton">Add Task</button>
-        </div>
-        <div class="task-filters">
-            <button id="filterAll">All</button>
-            <button id="filterCompleted">Completed</button>
-            <button id="filterPending">Pending</button>
-        </div>
-        <ul id="taskList"></ul>
+            <input type="text" id="customCategory" placeholder="Enter custom category (optional)" />
+
+            <!-- Priority selection -->
+            <select id="taskPriority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+
+            <button type="submit">Add Task</button>
+        </form>
+        <!-- List to display tasks -->
+        <div id="tasksList"></div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
