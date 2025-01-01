@@ -1,14 +1,15 @@
-# To-Do List App
+# 📝 To-Do List App
 
-A dynamic and interactive To-Do List application built with HTML, CSS, and JavaScript. This app helps you efficiently manage your tasks with added features like categories, priorities, and customizability.
+A dynamic and interactive To-Do List application built with **HTML**, **CSS**, and **JavaScript**. This app helps you efficiently manage your tasks with features like custom categories, priorities, and persistent data storage.
 
 ## 🚀 Features
--	**Add Tasks:** Add tasks with a category and priority for better organization.
--	**Custom Categories:** Create your own custom categories for unique tasks.
--	**Prioritize Tasks:** Assign priorities (High, Medium, Low) to each task.
--	**Mark as Complete:** Check tasks off your list when they’re done.
--	**Delete Tasks:** Easily remove tasks that are no longer needed.
--	**User-Friendly Design:** Intuitive interface for managing your to-do list.
+- **Add Tasks:** Easily add tasks with specific categories and priorities.
+- **Custom Categories:** Create unique categories tailored to your needs.
+- **Prioritize Tasks:** Assign priorities (High, Medium, Low) for better task management.
+- **Mark as Complete:** Toggle tasks as completed and keep track of progress.
+- **Delete Tasks:** Safely delete tasks with confirmation prompts.
+- **Persistent Data:** Save and retrieve tasks using Local Storage, ensuring your tasks are always available.
+- **User-Friendly Design:** A responsive and intuitive interface for all devices.
 
 ## 📸 Screenshot
 
@@ -31,8 +32,12 @@ to-do-list/
     ```bash
     git clone https://github.com/marwan-ahmed-23/to-do-list.git
     ```
-2. Open `index.html` in your browser.
-3. Start adding tasks, selecting categories, and setting priorities!
+2. Open the project folder:
+    ```bash
+    cd to-do-list
+    ```
+3. Open `index.html` in your browser.
+4. Start adding tasks, selecting categories, and setting priorities!
 
 ## 🌟 Examples of Input
 
@@ -54,13 +59,31 @@ Here are some examples of tasks you can add:
         Category: Personal
         Priority: Medium
 
-## 🤝 Contributing
-Contributions are welcome! Fork the repository, create a new branch for your feature, and submit a pull request for any enhancements or bug fixes.
+## 🤝 Contributions
+
+Contributions are welcome! Here's how you can contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix:
+    ```bash
+    git checkout -b feature-name
+    ```
+3. Commit your changes:
+    ```bash
+    git commit -m "Added a new feature"
+    ```
+4. Push your branch:
+    ```bash
+    git push origin feature-name
+    ```
+5. Submit a pull request with details about your changes.
+
 
 ## 🛠 Future Improvements
-- Add a task deadline feature with a calendar selector.
-- Implement task sorting by priority or completion status.
-- Save tasks using local storage for persistent data.
+- **Task Deadlines:** Add a deadline feature with a calendar selector.
+- **Task Sorting:** Implement sorting options by priority or completion status.
+- **Advanced Search:** Enable users to search tasks by category or keywords.
+- **Theme Customization:** Add light and dark mode themes for better usability.
 
 ## 🌟 Stay Connected
-If you find this project helpful, don’t forget to star ⭐ the repository!
+If you find this project helpful, please star ⭐ the repository to show your support!
