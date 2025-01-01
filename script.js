@@ -6,6 +6,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const taskPriority = document.getElementById("taskPriority"); // Dropdown menu for task priority
   const tasksList = document.getElementById("tasksList"); // Container for displaying tasks
 
+  // Load tasks from Local Storage on page load
+  const loadTasks = () => {
+    const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    savedTasks.forEach((task) => {
+      addTask(task.text, task.category, task.priority, task.completed, false);
+    });
+  };
+
+  // Save tasks to Local Storage
+  const saveTasksToLocalStorage = (tasks) => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  };
+
+  // Add or update a task in Local Storage
+  const updateTaskInLocalStorage = (taskText, completed) => {
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const task = tasks.find((t) => t.text === taskText);
+    if (task) {
+      task.completed = completed;
+    }
+    saveTasksToLocalStorage(tasks);
+  };
+
+  // Remove task from Local Storage
+  const removeTaskFromLocalStorage = (taskText) => {
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const updatedTasks = tasks.filter((task) => task.text !== taskText);
+    saveTasksToLocalStorage(updatedTasks);
+  };
+
   // Function to create a divider between tasks
   const createDivider = () => {
     const divider = document.createElement("hr");
@@ -14,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Function to add a task
-  const addTask = (taskText, category, priority) => {
+  const addTask = (taskText, category, priority, completed = false, saveToStorage = true) => {
     if (!taskText.trim()) {
       alert("Task cannot be empty!");
       return;
@@ -41,6 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskTextElement = document.createElement("span");
     taskTextElement.textContent = `${taskText} [${category}] - Priority: ${priority}`;
     taskTextElement.style.flexGrow = "1";
+    if (completed) {
+      taskTextElement.style.textDecoration = "line-through";
+      taskTextElement.classList.add("completed");
+    }
 
     // Create toggle button
     const toggleBtn = document.createElement("button");
@@ -65,16 +99,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Toggle button functionality
     toggleBtn.addEventListener("click", () => {
-      taskTextElement.style.textDecoration =
-        taskTextElement.style.textDecoration === "line-through"
-          ? "none"
-          : "line-through";
+      const isCompleted = taskTextElement.style.textDecoration === "line-through";
+      taskTextElement.style.textDecoration = isCompleted ? "none" : "line-through";
+      taskTextElement.classList.toggle("completed");
+      updateTaskInLocalStorage(taskText, !isCompleted);
     });
 
-    // Remove button functionality
+    // Remove button functionality with confirmation
     removeBtn.addEventListener("click", () => {
-      taskContainer.remove();
+      const confirmed = confirm("Are you sure you want to delete this task?");
+      if (confirmed) {
+        taskContainer.remove();
+        removeTaskFromLocalStorage(taskText); // Remove from Local Storage
+      }
     });
+
+    // Save task to Local Storage if not already saved
+    if (saveToStorage) {
+      const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      tasks.push({ text: taskText, category, priority, completed });
+      saveTasksToLocalStorage(tasks);
+    }
   };
 
   // Event listener for form submission
@@ -93,4 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     taskInput.value = ""; // Clear input field
     customCategory.value = ""; // Clear custom category field
   });
+
+  // Load tasks on page load
+  loadTasks();
 });
