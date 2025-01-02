@@ -80,7 +80,7 @@ button:hover {
 }
 
 .toggle-btn:hover {
-  background-color: #2980b9;
+  background-color: #0056b3;
 }
 
 .task.high-priority {
@@ -96,4 +96,76 @@ button:hover {
 .task.low-priority {
   background-color: #d4edda;
   border-left: 5px solid #28a745;
+}
+
+.filters {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filters h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.filters select,
+.filters button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.filters button {
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh; 
+}
+
+.left-panel {
+  width: 35%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right-panel {
+  width: 60%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
