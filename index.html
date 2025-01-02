@@ -4,37 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List App</title>
+    <title>To-Do List with Filters</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>To-Do List App</h1>
-        <!-- Form to add tasks -->
-        <form id="taskForm">
-            <input type="text" id="taskInput" placeholder="Add your task" required />
-            <select id="taskCategory">
-                <option value="Work">Work</option>
-                <option value="Personal">Personal</option>
-                <option value="Shopping">Shopping</option>
-                <option value="Fitness">Fitness</option>
-                <option value="Custom">Custom (add below)</option>
-            </select>
-            <input type="text" id="customCategory" placeholder="Enter custom category (optional)" />
+    <div class="main-container">
+        <div class="left-panel">
+            <h1>Add Task</h1>
+            <form id="taskForm">
+                <input type="text" id="taskInput" placeholder="Enter your task" required />
+                <select id="taskCategory">
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Fitness">Fitness</option>
+                    <option value="Custom">Custom Category</option>
+                </select>
+                <input type="text" id="customCategory" placeholder="Enter custom category" />
+                <select id="taskPriority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
 
-            <!-- Priority selection -->
-            <select id="taskPriority">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-            </select>
-
-            <button type="submit">Add Task</button>
-        </form>
-        <!-- List to display tasks -->
-        <div id="tasksList"></div>
+        <div class="right-panel">
+            <div class="filters">
+                <h2>Filters</h2>
+                <select id="filterCategory">
+                    <option value="all">All Categories</option>
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Fitness">Fitness</option>
+                </select>
+                <select id="filterStatus">
+                    <option value="all">All Statuses</option>
+                    <option value="completed">Completed</option>
+                    <option value="incomplete">Incomplete</option>
+                </select>
+                <button id="applyFilters">Apply Filters</button>
+            </div>
+            <div id="tasksList"></div>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 
