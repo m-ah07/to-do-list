@@ -1,6 +1,6 @@
 # 📝 To-Do List App
 
-A dynamic and interactive To-Do List application built with **HTML**, **CSS**, and **JavaScript**. This app helps you efficiently manage your tasks with features like custom categories, priorities, and persistent data storage.
+A dynamic and interactive To-Do List application built with **HTML**, **CSS**, and **JavaScript**. This app helps you efficiently manage your tasks with features like custom categories, priorities, filters, and persistent data storage.
 
 ## 🚀 Features
 - **Add Tasks:** Easily add tasks with specific categories and priorities.
@@ -9,7 +9,8 @@ A dynamic and interactive To-Do List application built with **HTML**, **CSS**, a
 - **Mark as Complete:** Toggle tasks as completed and keep track of progress.
 - **Delete Tasks:** Safely delete tasks with confirmation prompts.
 - **Persistent Data:** Save and retrieve tasks using Local Storage, ensuring your tasks are always available.
-- **User-Friendly Design:** A responsive and intuitive interface for all devices.
+- **Filter Tasks:** Display tasks based on their category or completion status.
+- **User-Friendly Design:** A responsive and intuitive interface with a two-panel layout for better organization.
 
 ## 📸 Screenshot
 
@@ -84,6 +85,7 @@ Contributions are welcome! Here's how you can contribute:
 - **Task Sorting:** Implement sorting options by priority or completion status.
 - **Advanced Search:** Enable users to search tasks by category or keywords.
 - **Theme Customization:** Add light and dark mode themes for better usability.
+- **Notifications:** Integrate notifications for task deadlines.
 
 ## 🌟 Stay Connected
 If you find this project helpful, please star ⭐ the repository to show your support!
