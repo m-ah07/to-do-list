@@ -31,7 +31,7 @@ to-do-list/
 ## 📖 Usage
 1. Clone the repository:
     ```bash
-    git clone https://github.com/marwan-ahmed-23/to-do-list.git
+    git clone https://github.com/m-ah07/to-do-list.git
     ```
 2. Open the project folder:
     ```bash
